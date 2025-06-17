@@ -1,1 +1,65 @@
 @import '../../../style.scss';
+
+.category-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff6fb;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #111;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+        margin-bottom: 30px;
+        font-size: 1rem;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        justify-content: center;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        .category-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .category-icon {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                color: #111;
+                margin: 5px 0;
+            }
+
+            p {
+                color: #555;
+                font-size: 0.95rem;
+            }
+        }
+    }
+}

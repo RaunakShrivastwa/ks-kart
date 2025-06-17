@@ -6,6 +6,7 @@ import Course from './Components/Course/Course'
 import "./style.scss";
 import Footer from "./common/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductDetails from "./Components/Product/ProductDetails/ProductDetails";
 
 
 const App = () => {
@@ -16,8 +17,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/studio/course"  element={<Course />} />
+          <Route path="/studio/productDetails"  element={<ProductDetails />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </Router>
   );

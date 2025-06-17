@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fafafa;
+  margin: 0;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+  gap: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: auto;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image {
+  height: 400px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.image-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.thumbnail-list {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border: 3px solid #9333ea;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tag {
+  background: #e9d5ff;
+  color: #7e22ce;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 24px;
+  color: #111;
+}
+
+.brand-name {
+  color: #888;
+  font-size: 14px;
+}
+
+.rating-stars {
+  font-size: 14px;
+  color: #333;
+}
+
+.price-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: #9333ea;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.discount-tag {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.stock-status {
+  color: green;
+  font-weight: 500;
+}
+
+.quantity-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  gap: 8px;
+  background: #eee;
+  padding: 4px 10px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.quantity-control button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+  background: #9333ea;
+  color: white;
+  border: none;
+}
+
+.outline {
+  border: 2px solid #9333ea;
+  background: transparent;
+  color: #9333ea;
+}
+
+.extra-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.flat {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.info-highlights {
+  display: flex;
+  gap: 20px;
+  background: #f3e8ff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tab-buttons button {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.tab-buttons .active {
+  background: #ede9fe;
+  color: #6b21a8;
+  font-weight: bold;
+}
+
+.specifications {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.specifications li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
