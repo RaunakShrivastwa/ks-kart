@@ -7,6 +7,7 @@ import CourseInfoTable from "../CourseInfoTable/CourseInfoTable";
 import Chart from "../Chart/Chart";
 import Mentor from "../Mentor/Mentor";
 import Navbar from '../../Components/UI/NavbarUI';
+import FlashDeals from "../FlashProduct/FlashProduct";
 const Home = () => {
   const data = [
     { counter_key: "20+", counter_value: "Our Courses" },
@@ -99,12 +100,13 @@ const Home = () => {
       <Navbar />
       <Banner
       />
+      <FlashDeals />
       {/* <Counter data={data} /> */}
-      <CardInfo title={"Featured Programs"} course={featured} />
+      {/* <CardInfo title={"Featured Programs"} course={featured} />
       <CardInfo title={"Upcoming Courses"} course={featured} />
       <CourseInfoTable />
       <Chart />
-      <Mentor />
+      <Mentor /> */}
       {/* <CardInfo title={"Experts Mentors"} mentor={mentor} /> */}
     </div>
   );

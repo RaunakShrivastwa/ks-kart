@@ -4,6 +4,10 @@
 button{
     min-width: rem(65);
     @include flex(center,center);
+    &.primary{
+      background-color: var(--bg-primary) !important;
+    color: var(--white) !important;
+    }
 }
 
 .btn_outline {

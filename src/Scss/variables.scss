@@ -3,9 +3,11 @@
 :root{
     --bg-primary: #A459D1;
     --border:#1a1a1a5b;
+    --white:white;
 }
 
 .bg_primary     { background-color: #A459D1 !important; }     // Main sections, buttons, banners
+.bg_primary-100     { background-color: #a559d186 !important; } 
 .bg-accent-1    { background-color: #FFD166; }     // Highlights, festive badges, offers
 .bg-accent-2    { background-color: #FF6B6B; }     // Romantic, wishlist, love gifts
 .bg-accent-3    { background-color: #6C63FF; }     // Hover states, playful buttons

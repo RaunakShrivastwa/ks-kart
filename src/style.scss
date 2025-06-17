@@ -3,7 +3,7 @@
 @import "./Scss//function.scss";
 @import "./Scss//mixing.scss";
 @import "./Scss//variables.scss";
-@import "./Scss/reset.scss";
+// @import "./Scss/reset.scss";
 @import './Scss/Components/Button.scss';
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import './Scss/Components/input.scss';
@@ -50,4 +50,13 @@ main {
     color: #FFD166; // Accent color on hover
   }
  }
+}
+
+.circle{
+  @include box(rem(40),rem(40));
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  color: var(--white);
+  @include flex(center,center);
+  cursor: pointer;
 }
