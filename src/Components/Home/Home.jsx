@@ -7,6 +7,7 @@ import CourseInfoTable from "../CourseInfoTable/CourseInfoTable";
 import Chart from "../Chart/Chart";
 import Mentor from "../Mentor/Mentor";
 import Navbar from '../../Components/UI/NavbarUI';
+import CatogeryProducts from "../Product/CatogeryProducts/CatogeryProducts";
 import FlashDeals from "../FlashProduct/FlashProduct";
 const Home = () => {
   const data = [
@@ -98,16 +99,9 @@ const Home = () => {
   return (
     <div className="home_container">
       <Navbar />
-      <Banner
-      />
+      <Banner/>
       <FlashDeals />
-      {/* <Counter data={data} /> */}
-      {/* <CardInfo title={"Featured Programs"} course={featured} />
-      <CardInfo title={"Upcoming Courses"} course={featured} />
-      <CourseInfoTable />
-      <Chart />
-      <Mentor /> */}
-      {/* <CardInfo title={"Experts Mentors"} mentor={mentor} /> */}
+      <CatogeryProducts />
     </div>
   );
 };
