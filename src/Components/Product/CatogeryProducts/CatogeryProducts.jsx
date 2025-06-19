@@ -19,7 +19,7 @@ const CatogeryProducts = () => {
       <p>
         Discover amazing products across all categories with unbeatable prices and quality
       </p>
-      <div className="category-grid">
+      <div className="category-grid container">
         {categories.map((cat, idx) => (
           <div className="category-card" key={idx}>
             <div className="category-icon">{cat.icon}</div>

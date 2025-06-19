@@ -18,21 +18,6 @@ const Header = () => {
           <Search className="fs-1 text-dark " />
         </div>
       </div>
-
-      <div className="right text-primary fs-16">
-        <img
-          className="profile_img text-primary"
-          src="https://cdn-icons-png.flaticon.com/128/18955/18955674.png"
-          alt=""
-        />
-        <Menu
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
-          className="menu d-none"
-        />
-        <Canvas />
-      </div>
     </div>
   );
 };

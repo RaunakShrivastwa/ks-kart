@@ -1,107 +1,39 @@
 import React from "react";
 import "./Home.scss";
 import Banner from "../Banner/Banner";
-import Counter from "../Counter/Counter";
-import CardInfo from "../CardInfo/CardInfo";
-import CourseInfoTable from "../CourseInfoTable/CourseInfoTable";
-import Chart from "../Chart/Chart";
-import Mentor from "../Mentor/Mentor";
 import Navbar from '../../Components/UI/NavbarUI';
 import CatogeryProducts from "../Product/CatogeryProducts/CatogeryProducts";
 import FlashDeals from "../FlashProduct/FlashProduct";
+import { TrendingDown, TrendingUp, Zap } from "react-feather";
+
+
+
 const Home = () => {
-  const data = [
-    { counter_key: "20+", counter_value: "Our Courses" },
-    { counter_key: "10+", counter_value: "Experts Mentors" },
-    { counter_key: "2+", counter_value: "Our Tools" },
+ 
+  const flashDeals = [
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m',star:5,rating:'4.8(345)' },
+    // Add more if needed
   ];
 
-  const featured = [
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
-    {
-      lecture: "JavaScript",
-      desc: "Advanced Topics and Practicals",
-      img: "https://wallpapercave.com/wp/wp12456163.jpg",
-      session: "25-30",
-      time: "25-30",
-      duration: "3-6",
-    },
+   const trending = [
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, time: '2h 30m',star:5,rating:'4.8(345)' },
+    { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, time: '2h 30m',star:5,rating:'4.8(345)' },
+    // Add more if needed
   ];
 
-  const mentor = [
-    {
-      name: "Shubham Shri.",
-      img: "",
-      proffesion: "Director and C.O",
-      Exprince: "2+ Years",
-    },
-    {
-      name: "Shubham Shri.",
-      img: "",
-      proffesion: "Director and C.O",
-      Exprince: "2+ Years",
-    },
-    {
-      name: "Shubham Shri.",
-      img: "",
-      proffesion: "Director and C.O",
-      Exprince: "2+ Years",
-    }
-  ]
 
   return (
     <div className="home_container">
       <Navbar />
       <Banner/>
-      <FlashDeals />
+      <FlashDeals icon ={<Zap />} title1={'Flash'} title2={'Deals'} desc={'Limited time offers - Grab them before they'} flashDeals={flashDeals} />
       <CatogeryProducts />
+      <FlashDeals  icon ={<TrendingUp />} title1={'Tranding'} title2={'Now'} desc={'Most Popular Stock'} flashDeals={flashDeals} />
     </div>
   );
 };

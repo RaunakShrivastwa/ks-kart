@@ -13,6 +13,10 @@ body {
   overflow: hidden;
 }
 
+#root{
+  background-color: var(--bg-primary-100);
+}
+
 main {
   overflow-y: auto;
   height: calc(100vh - 70px);
@@ -59,4 +63,5 @@ main {
   color: var(--white);
   @include flex(center,center);
   cursor: pointer;
+  border: rem(3) solid var(--warning-100);
 }

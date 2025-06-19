@@ -2,16 +2,7 @@ import React, { useRef } from 'react';
 import './FlashProduct.scss';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-const flashDeals = [
-  { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
-  { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
-  { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
-  { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
-  
-  // Add more if needed
-];
-
-const FlashDeals = () => {
+const FlashDeals = ({ icon, title1, title2, desc, flashDeals }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -25,17 +16,17 @@ const FlashDeals = () => {
 
   return (
     <div className="flash-deals-section container">
-       <div className="d-flex ">
+      <div className="d-flex ">
         <div className="flash-deals-header flex-grow-1">
-        <h2>⚡ Flash <span className='text_primary'>Deals</span></h2>
-        <p>Limited time offers - Grab them before they're gone!</p>
+          <h2><span className='text-accent-1'>{icon}</span> {title1} <span className='text_primary'>{title2}</span></h2>
+          <p>{desc}</p>
+        </div>
+        <div className="slider-controls">
+          <div className='circle' onClick={() => scroll('left')}><ChevronLeft /></div>
+          <div className='circle' onClick={() => scroll('right')}><ChevronRight /></div>
+
+        </div>
       </div>
-      <div className="slider-controls">
-        <div className='circle'  onClick={() => scroll('left')}><ChevronLeft /></div>
-        <div className='circle' onClick={() => scroll('right')}><ChevronRight /></div>
-       
-      </div>
-       </div>
       <div className="flash-deals-wrapper" ref={scrollRef}>
         {flashDeals.map((deal, idx) => (
           <div className="flash-card shadow" key={idx}>
@@ -44,7 +35,7 @@ const FlashDeals = () => {
               <span className="timer">⏱ {deal.time}</span>
             </div>
             <div className="image-placeholder bg-transparent">
-                <img className='w-100 h-100' src="https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)" alt="" />
+              <img className='w-100 h-100' src="https://bsmedia.business-standard.com/_media/bs/img/article/2023-12/03/full/1701622678-4068.jpg?im=FitAndFill=(826,465)" alt="" />
             </div>
             <div className="info">
               <span className="category text_primary">{deal.category}</span>

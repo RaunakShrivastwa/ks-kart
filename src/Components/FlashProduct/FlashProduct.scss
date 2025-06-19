@@ -2,7 +2,6 @@
 
 .flash-deals-section {
   padding: 2rem;
-  background: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -89,6 +88,10 @@ flex-grow: 1;
 .timer {
   font-size: 0.75rem;
   color: #666;
+  border-radius: 16px;
+  padding: 0 7px;
+  border: rem(1) solid var(--bg-primary);
+  @include flex(center,center);
 }
 
 .image-placeholder {
