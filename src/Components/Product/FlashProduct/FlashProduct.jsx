@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import './FlashProduct.scss';
 import { ChevronLeft, ChevronRight, Star } from 'react-feather';
+import { useNavigate } from 'react-router-dom';
 
 const FlashDeals = ({ icon, title1, title2, desc, flashDeals }) => {
   const scrollRef = useRef(null);
+  const naviGate = useNavigate();
 
   const scroll = (direction) => {
     const { current } = scrollRef;
@@ -13,6 +15,10 @@ const FlashDeals = ({ icon, title1, title2, desc, flashDeals }) => {
       current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
+
+  const handleDetails = ()=>{
+      naviGate('/product/details/:120')
+  }
 
   return (
     <div className="flash-deals-section container">
@@ -68,7 +74,7 @@ const FlashDeals = ({ icon, title1, title2, desc, flashDeals }) => {
               <p className="price text-dark">
                 ${deal.price.toFixed(2)} <span className="old-price">${deal.oldPrice.toFixed(2)}</span>
               </p>
-              <button className="grab-button w-100 primary fs-16">Grab Deal</button>
+              <button onClick={()=>handleDetails()}  className="grab-button w-100 fs-16">Grab Deal</button>
             </div>
           </div>
         ))}

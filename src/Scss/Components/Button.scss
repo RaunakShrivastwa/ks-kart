@@ -3,12 +3,13 @@
 @import '../mixing.scss';
 
 button{
-    background: var(--bg_primary);
+    background-color: var(--bg-primary);
   color: var(--white);
   padding: rem(10);
   margin-top: rem(10);
   border: none;
   border-radius: rem(50) !important;
+  max-height: rem(40);
   cursor: pointer;
   transition: background 0.3s;
   @include fontStyle(var(--fs-14),rem(20),500);

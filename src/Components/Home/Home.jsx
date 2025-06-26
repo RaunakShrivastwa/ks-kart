@@ -6,6 +6,7 @@ import CatogeryProducts from "../Product/CatogeryProducts/CatogeryProducts";
 import FlashDeals from "../Product/FlashProduct/FlashProduct";
 import { TrendingDown, TrendingUp, Zap } from "react-feather";
 import SubscribeSection from "../GetInTouch/GetInTouch";
+import Testimonial from "../../common/Testimonial/Testimonial";
 
 
 
@@ -44,6 +45,7 @@ const Home = () => {
       <CatogeryProducts />
       <FlashDeals icon={<TrendingUp />} title1={'Tranding'} title2={'Now'} desc={'Most Popular Stock'} flashDeals={trending} />
       <FlashDeals title1={'Featured'} title2={'Products'} desc={'Hand-picked products just for you'} flashDeals={Featured} />
+      <Testimonial />
       <SubscribeSection />
     </div>
   );

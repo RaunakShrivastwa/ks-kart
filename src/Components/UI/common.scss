@@ -3,4 +3,6 @@
 .nav_wrapper{
     border-radius: rem(6);
     z-index: 10 !important;
+    max-height: rem(56);
+    @include flex('',center)
 }
