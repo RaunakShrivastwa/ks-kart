@@ -1,12 +1,12 @@
 // ProductDetails.jsx
 import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, Zap } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, Zap, Plus, Minus, ShareIcon, Share2Icon } from 'lucide-react';
 import './ProductDetails.scss';
 import FlashDeals from '../FlashProduct/FlashProduct';
+import { Send, Share } from 'react-feather';
 
 const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(0);
 
    const flashDeals = [
@@ -123,6 +123,11 @@ const ProductDetails = () => {
               <button className="wishlist-btn">
                 <Heart className="wishlist-btn__icon" />
               </button>
+
+              <button className="wishlist-btn share pointer">
+                <Share2Icon className="wishlist-btn__icon" />
+              </button>
+
             </div>
             <div className="thumbnail-gallery">
               {productImages.map((img, index) => (
@@ -140,25 +145,25 @@ const ProductDetails = () => {
           {/* Product Info */}
           <div className="product-info">
             <div className="product-header">
-              <h1 className="product-title">Premium Wireless Earbuds Pro</h1>
+              <h2 className="product-title">Premium Wireless Earbuds Pro</h2>
               <div className="rating-section">
                 <div className="stars">{renderStars(5)}</div>
-                <span className="review-count">(2,847 reviews)</span>
+                <span className='text-dark'>(2,847 reviews)</span>
               </div>
               <div className="price-section">
-                <span className="current-price">$129.99</span>
-                <span className="original-price">$179.99</span>
+                <h3 className='text_primary'>$129.99</h3>
+                <h3 className="original-price ">$179.99</h3>
                 <span className="discount-badge">-28%</span>
               </div>
               <div className="stock-status">
                 <div className="stock-indicator"></div>
-                <span className="stock-text">9 Stock left available</span>
+                <span className="green">9 Stock left available</span>
               </div>
             </div>
 
             {/* Color Selection */}
             <div className="color-selection">
-              <h3 className="section-title">Color</h3>
+              <h4 >Color</h4>
               <div className="color-options">
                 {colors.map((color, index) => (
                   <button
@@ -175,28 +180,24 @@ const ProductDetails = () => {
 
             {/* Quantity */}
             <div className="quantity-selection">
-              <h3 className="section-title">Quantity</h3>
-              <div className="quantity-controls">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="quantity-btn"
-                >
-                  -
-                </button>
-                <span className="quantity-display">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="quantity-btn"
-                >
-                  +
-                </button>
+              <h4>Quantity</h4>
+              <div className="quantity-controls mt-1">
+                 <div className="add pointer">
+                   <Plus className='icon' />
+                 </div>
+                 <div className="display">
+                   <span className='text-dark'>1</span>
+                 </div>
+                 <div className="remove pointer">
+                   <Minus className='icon' />
+                 </div>
               </div>
             </div>
 
             {/* Buttons */}
             <div className="action-buttons">
-              <button className="btn btn--primary">
-                <ShoppingCart className="btn__icon" />
+              <button className=" d-flex align-items-center gap-1 justify-content-center">
+                <ShoppingCart className="icon" />
                 <span>Add to Cart</span>
               </button>
               <button className="btn btn--secondary">
@@ -210,19 +211,11 @@ const ProductDetails = () => {
                 <div key={index} className="feature-item">
                   <feature.icon className="feature-item__icon" />
                   <div className="feature-item__content">
-                    <h4 className="feature-item__title">{feature.title}</h4>
-                    <p className="feature-item__description">{feature.description}</p>
+                    <h4>{feature.title}</h4>
+                    <span className="feature-item__description">{feature.description}</span>
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Share */}
-            <div className="share-section">
-              <button className="share-btn">
-                <Share2 className="share-btn__icon" />
-                <span className="share-btn__text">Share</span>
-              </button>
             </div>
           </div>
         </div>

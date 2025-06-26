@@ -1,55 +1,176 @@
 // 🎨 Background Colors
 
-:root{
-    --bg-primary: #A459D1;
-    --bg-primary-100: #A459D114;
-    --border:#1a1a1a5b;
-    --white:white;
-    --warning-100:#FFD166;
-    --black: black;
-    --red:red;
+:root {
+  --bg-primary: #A459D1;
+  --bg-primary-100: #A459D114;
+  --border: #1a1a1a5b;
+  --white: white;
+  --warning-100: #FFD166;
+  --black: black;
+  --red: red;
 
 }
 
-.bg_primary     { background-color: #A459D1 !important; }     // Main sections, buttons, banners
-.bg_primary-100     { background-color: #a559d186 !important; } 
-.bg-accent-1    { background-color: #FFD166; }     // Highlights, festive badges, offers
-.bg-accent-2    { background-color: #FF6B6B; }     // Romantic, wishlist, love gifts
-.bg-accent-3    { background-color: #6C63FF; }     // Hover states, playful buttons
-.bg-light       { background-color: #FAFAFA; }     // Page backgrounds, product grid
-.bg-hover       { background-color: #F5F5F5; }     // Button/card hover effect
-.bg-kid         { background-color: #FFFACD; }     // Kid mode UI background
+// Variables
+$primary-color: #8b5cf6;
+$primary-hover: #7c3aed;
+$secondary-color: #f3f4f6;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$text-muted: #9ca3af;
+$border-color: #e5e7eb;
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$error-color: #ef4444;
+$white: #ffffff;
 
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
+.bg_primary {
+  background-color: #A459D1 !important;
+}
+
+// Main sections, buttons, banners
+.bg_primary-100 {
+  background-color: #a559d186 !important;
+}
+
+.bg-accent-1 {
+  background-color: #FFD166;
+}
+
+// Highlights, festive badges, offers
+.bg-accent-2 {
+  background-color: #FF6B6B;
+}
+
+// Romantic, wishlist, love gifts
+.bg-accent-3 {
+  background-color: #6C63FF;
+}
+
+// Hover states, playful buttons
+.bg-light {
+  background-color: #FAFAFA;
+}
+
+// Page backgrounds, product grid
+.bg-hover {
+  background-color: #F5F5F5;
+}
+
+// Button/card hover effect
+.bg-kid {
+  background-color: #FFFACD;
+}
+
+.green{
+  color: #10b981;
+}
+
+// Kid mode UI background
 // 🔠 Text Colors
-.text_primary   { color: #A459D1 !important; }                // Important titles, CTA links
-.text-accent-1  { color: #FFD166; }                // Taglines, emotion hints
-.text-accent-2  { color: #FF6B6B; }                // Heart, love-based gift text
-.text-accent-3  { color: #6C63FF; }                // Links, hoverable texts
-.text-dark      { color: #333333; }                // Main body/headings
-.text-sub       { color: #555555; }                // Subheadings or small info text
-.text-kid       { color: #3C3C3C; }                // Kid mode readable dark text
+.text_primary {
+  color: #A459D1 !important;
+}
+
+// Important titles, CTA links
+.text-accent-1 {
+  color: #FFD166;
+}
+
+// Taglines, emotion hints
+.text-accent-2 {
+  color: #FF6B6B;
+}
+
+// Heart, love-based gift text
+.text-accent-3 {
+  color: #6C63FF;
+}
+
+// Links, hoverable texts
+.text-dark {
+  color: #333333;
+}
+
+// Main body/headings
+.text-sub {
+  color: #555555;
+}
+
+// Subheadings or small info text
+.text-kid {
+  color: #3C3C3C;
+}
+
+// Kid mode readable dark text
 
 // 🔳 Borders
-.border         { border: 1px solid #E0E0E0; }     // Card, input, box outline
-.border-primary { border: 1px solid #A459D1; }     // Highlighted or active boxes
+.border {
+  border: 1px solid #E0E0E0;
+}
+
+// Card, input, box outline
+.border-primary {
+  border: 1px solid #A459D1;
+}
+
+// Highlighted or active boxes
 
 // 🟦 Border Radius
-.radius-card    { border-radius: 20px; }           // Product cards, combo sections
-.radius-btn     { border-radius: 12px; }           // Buttons, inputs
+.radius-card {
+  border-radius: 20px;
+}
+
+// Product cards, combo sections
+.radius-btn {
+  border-radius: 12px;
+}
+
+// Buttons, inputs
 
 // ✍️ Fonts
-.font-heading   { font-family: 'Poppins', sans-serif; }  // Use for all headings
-.font-body      { font-family: 'Inter', sans-serif; }    // Use for paragraph text
+.font-heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+// Use for all headings
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+// Use for paragraph text
 
 // 🔡 Font Sizes
-.fs-heading     { font-size: 2.25rem; }            // Main heading (e.g. Hero Title)
-.fs-subheading  { font-size: 1.75rem; }            // Section titles (e.g. “Featured”)
-.fs-body        { font-size: 1rem; }               // Regular body content
-.fs-small       { font-size: 0.875rem; }           // Smaller captions/info
+.fs-heading {
+  font-size: 2.25rem;
+}
+
+// Main heading (e.g. Hero Title)
+.fs-subheading {
+  font-size: 1.75rem;
+}
+
+// Section titles (e.g. “Featured”)
+.fs-body {
+  font-size: 1rem;
+}
+
+// Regular body content
+.fs-small {
+  font-size: 0.875rem;
+}
+
+// Smaller captions/info
 
 // 🔘 Buttons
 .btn-primary {
-  background-color: #A459D1;                        // Primary CTA like “Buy Now”
+  background-color: #A459D1; // Primary CTA like “Buy Now”
   color: #fff;
   padding: 0.75rem 1.5rem;
   font-family: 'Poppins', sans-serif;
@@ -57,18 +178,19 @@
   border: none;
   cursor: pointer;
   transition: 0.3s;
+
   &:hover {
-    background-color: #6C63FF;                     // Hover: playful soft blue
+    background-color: #6C63FF; // Hover: playful soft blue
   }
 }
 
 .btn-kid {
-  background-color: #FFB347;                       // Buttons in Kid mode
+  background-color: #FFB347; // Buttons in Kid mode
   color: #3C3C3C;
   font-family: 'Poppins', sans-serif;
   border-radius: 12px;
 }
 
- .icon{
-                @include box(rem(15),rem(15))
-            }
+.icon {
+  @include box(rem(15), rem(15))
+}
