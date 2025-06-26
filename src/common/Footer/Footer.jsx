@@ -13,7 +13,7 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="text-light py-5 footer_container">
+    <footer className="text-light footer py-5 bg_primary mt-1">
       <div className="container">
         <div className="row">
           <div className="col-lg-4 mb-4 mb-lg-0 fade-in">

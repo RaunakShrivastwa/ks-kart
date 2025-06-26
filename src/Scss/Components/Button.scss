@@ -1,16 +1,25 @@
 @import "../variables.scss";
 @import '../function.scss';
+@import '../mixing.scss';
 
 button{
-    min-width: rem(65);
-    @include flex(center,center);
-    &.primary{
-      background-color: var(--bg-primary) !important;
-    color: var(--white) !important;
-    }
-}
-
-.btn_outline {
+    background: var(--bg_primary);
+  color: var(--white);
+  padding: rem(10);
+  margin-top: rem(10);
+  border: none;
+  border-radius: rem(50) !important;
+  cursor: pointer;
+  transition: background 0.3s;
+  @include fontStyle(var(--fs-14),rem(20),500);
+  &.white{
+      background-color: var(--white) !important;
+       color: var(--black-100) !important;
+       @include fontStyle(var(--fs-14),rem(20),600);
+       border: none;
+    }  
+    
+    .btn_outline {
   border: rem(1) solid var(--black-100);
   color: var(--black-100);
   padding: rem(8) rem(12);
@@ -23,3 +32,6 @@ button{
   padding: rem(8) rem(12);
   border-radius: rem(30);
 }
+}
+
+

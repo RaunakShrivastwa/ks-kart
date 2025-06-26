@@ -34,13 +34,25 @@
     @include flex(end, center);
     @include flex(end, center, rem(20));
   }
+
+  .profile_div{
+      width: rem(200);
+      min-height: rem(200);
+    z-index: 30;
+    position: absolute;
+    right: rem(25);
+    top: rem(62);
+  }
 }
 
-.profile_img,
+.profile,
 .logo {
-  @include box(rem(50), rem(50));
-  border-radius: 50%;
+    @include box(rem(50), rem(50));
+    border: rem(1) solid var(--border) !important;
+     border-radius: 50%;
 }
+
+
 
 .logo {
   border: 1px solid var(--black-300);

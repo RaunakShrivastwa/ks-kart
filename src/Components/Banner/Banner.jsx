@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 const banners = [
   {
     title: "Keep ,Clam and Wear , Offer Limited",
-    desc: "lorem mejhreurut r t r y tryutuyu yii",
+    desc: "Ace interviews with powerful data structures.",
     url: "/courses/web",
     image: "https://wallpapercave.com/wp/3050yQi.jpg"
   },
@@ -43,9 +43,9 @@ const Banner = () => {
             <div className="banner_slide" style={{ backgroundImage: `url(${item.image})` }}>
               <div className="banner_overlay w-100">
                 <div className="banner_content d-flex flex-column justify-content-center align-items-center">
-                  <h2>{item.title}</h2>
+                  <h1>{item.title}</h1>
                   <p className='text-center w-100' >{item.desc}</p>
-                  <Link to={item.url} className="course_btn bg_primary text-light">Explore Courses</Link>
+                  <Link to={item.url} className="course_btn bg_primary "><span>Explore Product</span></Link>
                 </div>
               </div>
             </div>

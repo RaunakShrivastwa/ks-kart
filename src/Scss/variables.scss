@@ -6,6 +6,9 @@
     --border:#1a1a1a5b;
     --white:white;
     --warning-100:#FFD166;
+    --black: black;
+    --red:red;
+
 }
 
 .bg_primary     { background-color: #A459D1 !important; }     // Main sections, buttons, banners
@@ -65,3 +68,7 @@
   font-family: 'Poppins', sans-serif;
   border-radius: 12px;
 }
+
+ .icon{
+                @include box(rem(15),rem(15))
+            }

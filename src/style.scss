@@ -17,6 +17,60 @@ body {
   background-color: var(--bg-primary-100);
 }
 
+h1{
+   @include fontStyle(var(--fs-40),rem(48),600);
+   margin: 0 !important;
+   padding: 0 !important
+}
+
+h2{
+   @include fontStyle(var(--fs-32),rem(40),600);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+h3{
+   @include fontStyle(var(--fs-24),rem(32),600);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+h4{
+   @include fontStyle(var(--fs-20),rem(28),600);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+h5{
+   @include fontStyle(var(--fs-18),rem(26),600);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+h6{
+   @include fontStyle(var(--fs-16),rem(24),600);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+p{
+   @include fontStyle(var(--fs-16),rem(24),400);
+    margin: 0 !important;
+   padding: 0 !important
+}
+
+span{
+  @include fontStyle(var(--fs-15),rem(24),500);
+  color: var(--white);
+   margin: 0 !important;
+   &.discount {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+}
+}
+
+
 main {
   overflow-y: auto;
   height: calc(100vh - 70px);
@@ -64,4 +118,7 @@ main {
   @include flex(center,center);
   cursor: pointer;
   border: rem(3) solid var(--warning-100);
+}
+.pointer{
+  cursor: pointer;
 }

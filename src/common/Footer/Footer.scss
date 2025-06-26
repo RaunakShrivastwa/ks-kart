@@ -1,5 +1,9 @@
 @import "../../style.scss";
 
+.footer{
+   border-radius: rem(6);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -25,7 +29,8 @@
 
 .footer_container{
   background-color: var(--black);
-    color: var(--white)
+    color: var(--white);
+    border-radius: rem(6);
 }
 
 .fade-in {

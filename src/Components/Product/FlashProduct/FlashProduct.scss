@@ -1,4 +1,4 @@
-@import '../../style.scss';
+@import '../../../style.scss';
 
 .flash-deals-section {
   padding: 2rem;
@@ -80,11 +80,7 @@ flex-grow: 1;
   justify-content: space-between;
   padding: 0.75rem 1rem 0 1rem;
 }
-.discount {
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 5px;
-}
+
 .timer {
   font-size: 0.75rem;
   color: #666;
@@ -127,19 +123,13 @@ flex-grow: 1;
   margin-left: 0.5rem;
 }
 
-.grab-button {
-  background: #ff007f;
-  color: white;
-  padding: 0.6rem;
-  width: 100%;
-  margin-top: 0.8rem;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.grab-button:hover {
-  background: #e60073;
+
+
+.icon_con{
+  @include flex("",center,rem(6));
+  .t_icon svg{
+    @include box(rem(10),rem(10))
+  }
 }
 
 

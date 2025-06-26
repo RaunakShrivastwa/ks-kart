@@ -1,0 +1,67 @@
+@import '../../../style.scss';
+
+.user_profile{
+    @include box(100%,100%);
+    background-color: var(--white);
+    color: var(--black);
+    z-index: 20;
+    border-radius: rem(6);
+    border: rem(1) solid var(--border);
+    @include flex("","",0,column);
+
+    .profile_header{
+        height: 40px;
+        border-bottom: rem(1) solid var(--border);
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 0px 10px;
+        h6,span{
+            line-height: 0 !important;
+        }
+        .email{
+            font-weight: 400;
+            color: var(--border);
+            font-size: rem(10);
+        }
+    }
+
+    .profile_body{
+        flex-grow: 1;
+        @include flex("","",4px,column);
+        padding: 10px 4px;
+        .item{
+            @include flex("",center,rem(20));
+            height: rem(30);
+            padding: 0px 7px;
+            border-radius: rem(6);
+           span{
+             color: var(--black);
+           }
+            &:hover{
+                background-color: var(--bg-primary);
+                color: var(--white);
+                cursor: pointer;
+                span{
+                    color: var(--white);
+                }
+            }
+            
+        }
+    }
+
+    .profile_footer{
+         @include flex("",center,rem(20));
+        height: rem(30);
+        border-top: rem(1) solid var(--border);
+        padding: 0px 11px;
+        color: var(--red);
+        span{
+            color: var(--red);
+        }
+
+    }
+}
+
