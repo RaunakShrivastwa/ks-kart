@@ -1,9 +1,14 @@
 import React from 'react';
 import './ProfileDropdown.scss';
-import { LogOut, User } from 'react-feather';
+import { LogOut, Moon, Star, Sun, User } from 'react-feather';
 import { GrOrderedList } from 'react-icons/gr';
+import { useDispatch } from 'react-redux';
+import { toggleTheme } from '../../../redux/Slice/ThemeSlice';
 
 const ProfileDropdown = () => {
+
+  const theme = useDispatch();
+
   return (
     <div className='user_profile'>
       <div className="profile_header">
@@ -29,6 +34,13 @@ const ProfileDropdown = () => {
          <div className="item">
           <User className='icon' />
           <span>Settings</span>
+        </div>
+
+        {/* theme */}
+         <div className="item">
+          <Sun  onClick={() => theme(toggleTheme('light'))} className='icon' />
+          <Moon onClick={() => theme(toggleTheme('dark'))} className='icon' />
+            <Star onClick={() => theme(toggleTheme('professional'))} className='icon' />
         </div>
 
       </div>

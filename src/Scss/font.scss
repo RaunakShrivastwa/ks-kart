@@ -15,6 +15,12 @@
   --fs-52: clamp(2.2rem, 3.3vw, 3.25rem);    // 52px
 }
 
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
 /* Apply classes */
 .fs-12 { font-size: var(--fs-12); }
 .fs-14 { font-size: var(--fs-14); }

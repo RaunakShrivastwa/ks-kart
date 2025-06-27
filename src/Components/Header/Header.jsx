@@ -7,11 +7,13 @@ import ProfileDropdown from "./profileDropdown/ProfileDropdown";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  
 
   return (
     <div className="header">
       <div className="left">
-        <img className="logo pointer" src="./logo.svg" alt="" />
+             <img className="profile pointer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtRCFKLR7qYTjM2rj6UrbrWMdGVRB4NBOgNspwpR27QJsyQAo0q2jDeaxZgrGWcxWKfHA&usqp=CAU" alt="" />
+
         <h3 className="title mb-0 text_primary">Codings Studio</h3>
       </div>
 

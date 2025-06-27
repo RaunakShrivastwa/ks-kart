@@ -36,7 +36,7 @@ const Banner = () => {
         slidesPerView={1}
         loop
         navigation
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 15000 }}
       >
         {banners.map((item, index) => (
           <SwiperSlide key={index}>
@@ -45,7 +45,7 @@ const Banner = () => {
                 <div className="banner_content d-flex flex-column justify-content-center align-items-center">
                   <h1>{item.title}</h1>
                   <p className='text-center w-100' >{item.desc}</p>
-                  <Link to={item.url} className="course_btn bg_primary "><span>Explore Product</span></Link>
+                  <Link to={item.url} className="course_btn button"><span>Explore Product</span></Link>
                 </div>
               </div>
             </div>

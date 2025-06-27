@@ -1,196 +1,236 @@
-// 🎨 Background Colors
 
-:root {
+:root{
+  --black : black;
+  --red: red;
+  --green:green;
+}
+
+// Light Theme - Bright and cheerful for all ages
+.light {
+  // Primary Colors
+  --bg-primary: #FF6B6B;
+  --bg-primary-100: #FF6B6B14;
+  --bg-secondary: #4ECDC4;
+  --bg-tertiary: #45B7D1;
+  
+  // Background Colors
+  --bg-main: #FFFFFF;
+  --bg-card: #F8F9FA;
+  --bg-overlay: #00000010;
+  
+  // Text Colors
+  --text-primary: #2C3E50;
+  --text-secondary: #5A6C7D;
+  --text-muted: #8E9AAF;
+  --text-light: #BDC3C7;
+  
+  // Border Colors
+  --border: #E1E8ED;
+  --border-light: #F1F3F4;
+  --border-hover: #D1D9E0;
+  
+  // Status Colors
+  --success: #2ECC71;
+  --success-100: #2ECC7114;
+  --warning: #F39C12;
+  --warning-100: #F39C1214;
+  --error: #E74C3C;
+  --error-100: #E74C3C14;
+  --info: #3498DB;
+  --info-100: #3498DB14;
+  
+  // Utility Colors
+  --white: #FFFFFF;
+  --black: #2C3E50;
+  --red: #E74C3C;
+  --gray-50: #F8F9FA;
+  --gray-100: #E9ECEF;
+  --gray-200: #DEE2E6;
+  --gray-300: #CED4DA;
+  --gray-400: #ADB5BD;
+  --gray-500: #6C757D;
+  
+  // Interactive States
+  --hover-overlay: #00000008;
+  --active-overlay: #00000012;
+  --focus-ring: #FF6B6B50;
+  
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dark{
+  background-color: black;
+  // Primary Colors
+  --bg-primary: #ffae0088;
+  --bg-primary-100: #FF660014;
+  --bg-secondary: #FF8533;
+  --bg-tertiary: #FFAA66;
+  
+  // Background Colors
+  --bg-main: #000000;
+  --bg-card: #1A1A1A;
+  --bg-overlay: #FFFFFF08;
+  
+  // Text Colors
+  --text-primary: #FFFFFF;
+  --text-secondary: #E5E5E5;
+  --text-muted: #B3B3B3;
+  --text-light: #808080;
+  
+  // Border Colors
+  --border: #333333;
+  --border-light: #262626;
+  --border-hover: #4D4D4D;
+  
+  // Status Colors
+  --success: #00CC66;
+  --success-100: #00CC6614;
+  --warning: #FF9900;
+  --warning-100: #FF990014;
+  --error: #FF3333;
+  --error-100: #FF333314;
+  --info: #0099FF;
+  --info-100: #0099FF14;
+  
+  // Utility Colors
+  --white: #FFFFFF;
+  --black: #000000;
+  --red: #FF3333;
+  --gray-50: #0D0D0D;
+  --gray-100: #1A1A1A;
+  --gray-200: #262626;
+  --gray-300: #333333;
+  --gray-400: #4D4D4D;
+  --gray-500: #666666;
+  
+  // Orange Shades
+  --orange-50: #FFF7F0;
+  --orange-100: #FFEDD5;
+  --orange-200: #FFD1AA;
+  --orange-300: #FFB380;
+  --orange-400: #FF9955;
+  --orange-500: #FF6600;
+  --orange-600: #E55A00;
+  --orange-700: #CC5500;
+  --orange-800: #B34D00;
+  --orange-900: #994400;
+  
+  // Interactive States
+  --hover-overlay: #FFFFFF0A;
+  --active-overlay: #FFFFFF15;
+  --focus-ring: #FF660050;
+  
+  // Blur Effects
+  --blur-light: blur(8px);
+  --blur-medium: blur(16px);
+  --blur-heavy: blur(24px);
+  --backdrop-blur: blur(12px);
+  
+  // Shadows with blur
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.25);
+  --shadow-orange: 0 4px 20px rgba(255,102,0,0.3);
+  --shadow-orange-glow: 0 0 30px rgba(255,102,0,0.4);
+}
+
+
+// Professional Theme - Your specified colors with business appeal
+.professional {
+  // Primary Colors (Your specified values)
   --bg-primary: #A459D1;
   --bg-primary-100: #A459D114;
+  --bg-secondary: #6C5CE7;
+  --bg-tertiary: #00B894;
+  
+  // Background Colors
+  --bg-main: #FFFFFF;
+  --bg-card: #FAFBFC;
+  --bg-overlay: #00000008;
+  
+  // Text Colors
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  --text-light: #A0AEC0;
+  
+  // Border Colors (Your specified border)
   --border: #1a1a1a5b;
+  --border-light: #E2E8F0;
+  --border-hover: #CBD5E0;
+  
+  // Status Colors
+  --success: #48BB78;
+  --success-100: #48BB7814;
+  --warning: #FFD166; // Your specified warning color
+  --warning-100: #FFD16614;
+  --error: #F56565;
+  --error-100: #F5656514;
+  --info: #4299E1;
+  --info-100: #4299E114;
+  
+  // Utility Colors (Your specified values)
   --white: white;
-  --warning-100: #FFD166;
   --black: black;
   --red: red;
-
+  --gray-50: #F7FAFC;
+  --gray-100: #EDF2F7;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E0;
+  --gray-400: #A0AEC0;
+  --gray-500: #718096;
+  
+  // Interactive States
+  --hover-overlay: #00000006;
+  --active-overlay: #00000010;
+  --focus-ring: #A459D150;
+  
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-// Variables
-$primary-color: #8b5cf6;
-$primary-hover: #7c3aed;
-$secondary-color: #f3f4f6;
-$text-primary: #111827;
-$text-secondary: #6b7280;
-$text-muted: #9ca3af;
-$border-color: #e5e7eb;
-$success-color: #10b981;
-$warning-color: #f59e0b;
-$error-color: #ef4444;
-$white: #ffffff;
-
-// Breakpoints
-$mobile: 480px;
-$tablet: 768px;
-$desktop: 1024px;
-$large: 1200px;
-
-.bg_primary {
-  background-color: #A459D1 !important;
-}
-
-// Main sections, buttons, banners
-.bg_primary-100 {
-  background-color: #a559d186 !important;
-}
-
-.bg-accent-1 {
-  background-color: #FFD166;
-}
-
-// Highlights, festive badges, offers
-.bg-accent-2 {
-  background-color: #FF6B6B;
-}
-
-// Romantic, wishlist, love gifts
-.bg-accent-3 {
-  background-color: #6C63FF;
-}
-
-// Hover states, playful buttons
-.bg-light {
-  background-color: #FAFAFA;
-}
-
-// Page backgrounds, product grid
-.bg-hover {
-  background-color: #F5F5F5;
-}
-
-// Button/card hover effect
-.bg-kid {
-  background-color: #FFFACD;
-}
-
-.green{
-  color: #10b981;
-}
-
-// Kid mode UI background
-// 🔠 Text Colors
-.text_primary {
-  color: #A459D1 !important;
-}
-
-// Important titles, CTA links
-.text-accent-1 {
-  color: #FFD166;
-}
-
-// Taglines, emotion hints
-.text-accent-2 {
-  color: #FF6B6B;
-}
-
-// Heart, love-based gift text
-.text-accent-3 {
-  color: #6C63FF;
-}
-
-// Links, hoverable texts
-.text-dark {
-  color: #333333;
-}
-
-// Main body/headings
-.text-sub {
-  color: #555555;
-}
-
-// Subheadings or small info text
-.text-kid {
-  color: #3C3C3C;
-}
-
-// Kid mode readable dark text
-
-// 🔳 Borders
-.border {
-  border: 1px solid #E0E0E0;
-}
-
-// Card, input, box outline
-.border-primary {
-  border: 1px solid #A459D1;
-}
-
-// Highlighted or active boxes
-
-// 🟦 Border Radius
-.radius-card {
-  border-radius: 20px;
-}
-
-// Product cards, combo sections
-.radius-btn {
-  border-radius: 12px;
-}
-
-// Buttons, inputs
-
-// ✍️ Fonts
-.font-heading {
-  font-family: 'Poppins', sans-serif;
-}
-
-// Use for all headings
-.font-body {
-  font-family: 'Inter', sans-serif;
-}
-
-// Use for paragraph text
-
-// 🔡 Font Sizes
-.fs-heading {
-  font-size: 2.25rem;
-}
-
-// Main heading (e.g. Hero Title)
-.fs-subheading {
-  font-size: 1.75rem;
-}
-
-// Section titles (e.g. “Featured”)
-.fs-body {
-  font-size: 1rem;
-}
-
-// Regular body content
-.fs-small {
-  font-size: 0.875rem;
-}
-
-// Smaller captions/info
-
-// 🔘 Buttons
-.btn-primary {
-  background-color: #A459D1; // Primary CTA like “Buy Now”
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-
+// Example usage in components
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  
   &:hover {
-    background-color: #6C63FF; // Hover: playful soft blue
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
   }
 }
 
-.btn-kid {
-  background-color: #FFB347; // Buttons in Kid mode
-  color: #3C3C3C;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 12px;
+.button-primary {
+  background-color: var(--bg-primary);
+  color: var(--white);
+  border: none;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
 }
 
-.icon {
-  @include box(rem(15), rem(15))
+.text-success {
+  color: var(--success);
+}
+
+.bg-warning {
+  background-color: var(--warning-100);
+  color: var(--text-primary);
+}
+
+// Theme switching utility
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

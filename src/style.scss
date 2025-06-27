@@ -122,3 +122,7 @@ main {
 .pointer{
   cursor: pointer;
 }
+
+.icon{
+  @include box(rem(20),rem(20));
+}

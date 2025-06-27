@@ -1,89 +1,105 @@
 @import "../../style.scss";
 
 .header {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--bg-primary); // theme primary background
+  color: var(--text-primary);
   @include flex(space-between, center, rem(40));
   min-height: rem(60);
   max-height: 72px;
   width: 100%;
   padding: rem(11) rem(20);
+  position: relative;
+  z-index: 10;
+  margin-bottom: rem(10);
 
   .left {
     @include flex(center, center, rem(20));
     .title {
       font-weight: 600;
+      color: var(--white); // white text on bg-primary
     }
   }
 
   .mid {
     flex-grow: 1;
-    // padding-left: rem(80);
-    ul {
-      @include flex(center, center, rem(10));
-      color: var(--black-100);
-      li:hover {
-       font-weight: 600;
-       cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    .input_group {
+      display: flex;
+      align-items: center;
+      background-color: var(--white);
+      padding: 0.4rem 0.8rem;
+      border-radius: rem(8);
+      box-shadow: var(--shadow-sm);
+
+      input {
+        border: none;
+        outline: none;
+        padding: 0.4rem;
+        font-size: rem(14);
+        background: transparent;
+        color: var(--black);
+      }
+
+      .search_icon {
+        color: var(--text-secondary);
+        margin-left: 0.5rem;
+        cursor: pointer;
       }
     }
   }
 
   .right {
-    
-    @include flex(end, center);
     @include flex(end, center, rem(20));
   }
 
-  .profile_div{
-      width: rem(200);
-      min-height: rem(200);
+  .profile_div {
+    width: rem(200);
+    min-height: rem(200);
     z-index: 30;
     position: absolute;
     right: rem(25);
     top: rem(62);
   }
-}
 
-.profile,
-.logo {
+  .profile,
+  .logo {
     @include box(rem(50), rem(50));
-    border: rem(1) solid var(--border) !important;
-     border-radius: 50%;
+    border: rem(1) solid var(--border);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .logo {
+    border: 1px solid var(--gray-300);
+  }
 }
 
-
-
-.logo {
-  border: 1px solid var(--black-300);
-}
-
+// Responsive Styles
 @media (max-width: 1070px) {
   .header .mid ul li:not(:first-child) {
     display: none;
   }
 
- .right .menu{
+  .right .menu {
     display: block !important;
   }
 }
 
 @media (max-width: 768px) {
-  .header .mid ul li {
-    display: none;
-  }
-
-  .input_group{
+  .input_group {
     display: none !important;
   }
 
-  .right .login,.right .signup{
+  .right .login,
+  .right .signup {
     display: none;
   }
 }
 
 @media (max-width: 468px) {
-    .title{
-        display: none;
-    }
+  .title {
+    display: none;
+  }
 }

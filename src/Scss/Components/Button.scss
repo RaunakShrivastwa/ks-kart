@@ -2,7 +2,7 @@
 @import '../function.scss';
 @import '../mixing.scss';
 
-button{
+button,.button{
     background-color: var(--bg-primary);
   color: var(--white);
   padding: rem(10);
@@ -13,6 +13,7 @@ button{
   cursor: pointer;
   transition: background 0.3s;
   @include fontStyle(var(--fs-14),rem(20),500);
+  @include flex(center,center);
   &.white{
       background-color: var(--white) !important;
        color: var(--black-100) !important;

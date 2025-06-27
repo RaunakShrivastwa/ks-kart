@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 
 function NavBarUI() {
   return (
-    <Navbar expand="lg" className="bg_primary nav_wrapper sticky-top">
+    <Navbar expand="lg" className=" z-1 nav_wrapper sticky-top">
       <Container>
         {/* <Navbar.Brand href="#home" className='text-light fs-16'>React-Bootstrap</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
