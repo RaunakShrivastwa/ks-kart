@@ -68,7 +68,7 @@ p{
 
 span{
   @include fontStyle(var(--fs-15),rem(24),500);
-  color: var(--white);
+  color: var(--text-primary);
    margin: 0 !important;
    &.discount {
   padding: 0.2rem 0.5rem;

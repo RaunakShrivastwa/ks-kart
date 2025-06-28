@@ -1,25 +1,22 @@
 // ProductDetails.jsx
-import React, { useState, useRef, useEffect } from 'react';
-import './ProductDetails.scss';
+import React, { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
-import FlashDeals from '../FlashProduct/FlashProduct';
 import { GrAnalytics } from 'react-icons/gr';
+import ReactImageMagnify from 'react-image-magnify';
+import FlashDeals from '../FlashProduct/FlashProduct';
+import './ProductDetails.scss';
 
 const flashDeals = [
   { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
   { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
   { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
   { title: 'Flash Sale', category: 'Electronics', price: 99.99, oldPrice: 199.99, discount: '50%', time: '2h 30m' },
-  // Add more if needed
 ];
 
 const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariant, setSelectedVariant] = useState(0);
-  const [magnifyStyle, setMagnifyStyle] = useState({});
-  const mainImageRef = useRef(null);
-  const magnifiedRef = useRef(null);
 
   // Sample product data
   const product = {
@@ -54,7 +51,7 @@ const ProductDetails = () => {
         name: 'Alex Johnson',
         rating: 5,
         date: '2023-05-15',
-        title: 'Best headphones I\'ve ever owned',
+        title: "Best headphones I've ever owned",
         comment: 'The sound quality is amazing and the noise cancellation works perfectly. Very comfortable for long listening sessions.'
       },
       {
@@ -90,25 +87,6 @@ const ProductDetails = () => {
     { id: 5, name: 'Sport Wireless Earbuds', price: 79.99, image: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6000/6000400_rd.jpg' },
   ];
 
-  const handleMouseMove = (e) => {
-    if (!mainImageRef.current || !magnifiedRef.current) return;
-
-    const { left, top, width, height } = mainImageRef.current.getBoundingClientRect();
-    const x = ((e.pageX - left) / width) * 100;
-    const y = ((e.pageY - top) / height) * 100;
-
-    setMagnifyStyle({
-      display: 'block',
-      backgroundImage: `url(${product.images[selectedImage]})`,
-      backgroundPosition: `${x}% ${y}%`,
-      backgroundSize: `${width * 2}px ${height * 2}px`
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setMagnifyStyle({ display: 'none' });
-  };
-
   const increaseQuantity = () => {
     setQuantity(prev => prev + 1);
   };
@@ -128,8 +106,8 @@ const ProductDetails = () => {
 
   return (
     <div className='d-flex flex-column'>
-
       <div className="product-details">
+       
         {/* Product Gallery */}
         <div className="product-gallery">
           <div className="thumbnail-container">
@@ -145,18 +123,37 @@ const ProductDetails = () => {
           </div>
 
           <div className="main-image-container">
-            <img
-              ref={mainImageRef}
-              className="main-image"
-              src={product.images[selectedImage]}
-              alt={product.name}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-            />
-            <div
-              ref={magnifiedRef}
-              className="magnified-image"
-              style={magnifyStyle}
+            <ReactImageMagnify
+              smallImage={{
+                alt: product.name,
+                isFluidWidth: true,
+                src: product.images[selectedImage],
+                sizes: '(max-width: 600px) 100vw, 50vw'
+              }}
+              largeImage={{
+                src: product.images[selectedImage],
+                width: 1200,
+                height: 1200
+              }}
+              enlargedImagePosition="over"
+              enlargedImageContainerDimensions={{
+                width: '150%',
+                height: '150%'
+              }}
+              enlargedImageContainerStyle={{
+                zIndex: 20,
+                border: '1px solid var(--border)',
+                borderRadius: '8px',
+                overflow: 'hidden'
+              }}
+              lensStyle={{
+                backgroundColor: 'rgba(0,0,0,0.1)',
+                cursor: 'zoom-in'
+              }}
+              isHintEnabled={true}
+              shouldUsePositiveSpaceLens={true}
+              hintTextMouse="Hover to zoom"
+              hintTextTouch="Tap to zoom"
             />
           </div>
         </div>
@@ -183,10 +180,12 @@ const ProductDetails = () => {
               {product.variants.map((variant, index) => (
                 <div
                   key={variant.id}
-                  className={`variant-option ${variant?.name}  ${selectedVariant === index ? 'selected' : ''}`}
+                  className={`variant-option ${variant.name} ${selectedVariant === index ? 'selected' : ''}`}
                   onClick={() => setSelectedVariant(index)}
                 >
-
+                  {selectedVariant === index && (
+                    <span className="checkmark">✓</span>
+                  )}
                 </div>
               ))}
             </div>
@@ -196,21 +195,19 @@ const ProductDetails = () => {
           <div className="quantity-selector">
             <label>Quantity:</label>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <span className="quantity-button" onClick={decreaseQuantity}>
+              <button className="quantity-button" onClick={decreaseQuantity}>
                 <Minus className='icon' />
-              </span>
+              </button>
               <input
                 type="text"
                 className="quantity-input"
                 value={quantity}
                 onChange={handleQuantityChange}
-                contentEditable="false"
-
                 min="1"
               />
-              <span className="quantity-button" onClick={increaseQuantity}>
+              <button className="quantity-button" onClick={increaseQuantity}>
                 <Plus className='icon' />
-              </span>
+              </button>
             </div>
           </div>
 
@@ -320,16 +317,17 @@ const ProductDetails = () => {
             ))}
           </div>
         </div>
-
-
       </div>
 
       <div className='w-100'>
-        <FlashDeals icon={<GrAnalytics />} title1={'You Might Like This'} title2={'Hurry!'} desc={'Best Suggestion on Your Search, Analytic and all'} flashDeals={flashDeals} />
+        <FlashDeals 
+          icon={<GrAnalytics />} 
+          title1={'You Might Like This'} 
+          title2={'Hurry!'} 
+          desc={'Best Suggestion on Your Search, Analytic and all'} 
+          flashDeals={flashDeals} 
+        />
       </div>
-
-
-
     </div>
   );
 };
