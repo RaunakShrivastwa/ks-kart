@@ -20,43 +20,50 @@ body {
 h1{
    @include fontStyle(var(--fs-40),rem(48),600);
    margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+   color: var(--text-primary);
 }
 
 h2{
    @include fontStyle(var(--fs-32),rem(40),600);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 h3{
    @include fontStyle(var(--fs-24),rem(32),600);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 h4{
    @include fontStyle(var(--fs-20),rem(28),600);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 h5{
    @include fontStyle(var(--fs-18),rem(26),600);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 h6{
    @include fontStyle(var(--fs-16),rem(24),600);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 p{
    @include fontStyle(var(--fs-16),rem(24),400);
     margin: 0 !important;
-   padding: 0 !important
+   padding: 0 !important;
+     color: var(--text-primary);
 }
 
 span{
@@ -69,7 +76,13 @@ span{
   border-radius: 5px;
 }
 }
+ul li{
+   @include fontStyle(var(--fs-16),rem(26),600);
+}
 
+label,div{
+    color: var(--text-primary);
+}
 
 main {
   overflow-y: auto;
@@ -125,4 +138,8 @@ main {
 
 .icon{
   @include box(rem(20),rem(20));
+}
+
+.white{
+  color: var(--white);
 }

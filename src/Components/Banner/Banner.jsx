@@ -43,8 +43,8 @@ const Banner = () => {
             <div className="banner_slide" style={{ backgroundImage: `url(${item.image})` }}>
               <div className="banner_overlay w-100">
                 <div className="banner_content d-flex flex-column justify-content-center align-items-center">
-                  <h1>{item.title}</h1>
-                  <p className='text-center w-100' >{item.desc}</p>
+                  <h1 className='white'>{item.title}</h1>
+                  <p className='text-center w-100 white' >{item.desc}</p>
                   <Link to={item.url} className="course_btn button"><span>Explore Product</span></Link>
                 </div>
               </div>

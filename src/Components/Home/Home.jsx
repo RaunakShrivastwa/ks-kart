@@ -41,11 +41,11 @@ const Home = () => {
     <div className="home_container">
       <Navbar />
       <Banner />
-      {/* <FlashDeals icon={<Zap />} title1={'Flash'} title2={'Deals'} desc={'Limited time offers - Grab them before they'} flashDeals={flashDeals} /> */}
-      {/* <CatogeryProducts /> */}
-      {/* <FlashDeals icon={<TrendingUp />} title1={'Tranding'} title2={'Now'} desc={'Most Popular Stock'} flashDeals={trending} /> */}
-      {/* <FlashDeals title1={'Featured'} title2={'Products'} desc={'Hand-picked products just for you'} flashDeals={Featured} /> */}
-      {/* <Testimonial /> */}
+      <FlashDeals icon={<Zap />} title1={'Flash'} title2={'Deals'} desc={'Limited time offers - Grab them before they'} flashDeals={flashDeals} /> 
+      <CatogeryProducts />
+       <FlashDeals icon={<TrendingUp />} title1={'Tranding'} title2={'Now'} desc={'Most Popular Stock'} flashDeals={trending} /> 
+       <FlashDeals title1={'Featured'} title2={'Products'} desc={'Hand-picked products just for you'} flashDeals={Featured} /> 
+      <Testimonial />
       {/* <SubscribeSection /> */}
     </div>
   );

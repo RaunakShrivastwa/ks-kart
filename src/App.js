@@ -7,7 +7,7 @@ import Footer from "./common/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from "react-redux";
 import CryptoService from "./EncryptionDecryption/CryptoService";
-// import ProductDetails from "./Components/Product/ProductDetails/ProductDetails";
+import ProductDetails from "./Components/Product/ProductDetails/ProductDetails";
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/product/details/:id"  element={<ProductDetails />} /> */}
+          <Route path="/product/details/:id"  element={<ProductDetails />} />
         </Routes>
         <Footer />
       </main>

@@ -21,10 +21,10 @@ const CatogeryProducts = () => {
       </p>
       <div className="category-grid container mt-3">
         {categories.map((cat, idx) => (
-          <div className="category-card" key={idx}>
+          <div className="category-card shadow" key={idx}>
             <div className="category-icon">{cat.icon}</div>
-            <h3>{cat.name}</h3>
-            <p>{cat.items}</p>
+            <h3 className="name">{cat.name}</h3>
+            <p className="item">{cat.items}</p>
           </div>
         ))}
       </div>
