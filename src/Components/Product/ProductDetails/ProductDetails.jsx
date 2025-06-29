@@ -1,5 +1,4 @@
-// ProductDetails.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { GrAnalytics } from 'react-icons/gr';
 import ReactImageMagnify from 'react-image-magnify';
@@ -17,8 +16,16 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariant, setSelectedVariant] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Sample product data
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Sample product data - keep your original data
   const product = {
     id: 1,
     name: 'Premium Wireless Headphones',
@@ -107,7 +114,6 @@ const ProductDetails = () => {
   return (
     <div className='d-flex flex-column'>
       <div className="product-details">
-       
         {/* Product Gallery */}
         <div className="product-gallery">
           <div className="thumbnail-container">
@@ -117,48 +123,55 @@ const ProductDetails = () => {
                 className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
                 onClick={() => setSelectedImage(index)}
               >
-                <img src={image} alt={`Thumbnail ${index + 1}`} />
+                <img src={image} alt={`Thumbnail ${index + 1}`} loading="lazy" />
               </div>
             ))}
           </div>
 
           <div className="main-image-container">
-            <ReactImageMagnify
-              smallImage={{
-                alt: product.name,
-                isFluidWidth: true,
-                src: product.images[selectedImage],
-                sizes: '(max-width: 600px) 100vw, 50vw'
-              }}
-              largeImage={{
-                src: product.images[selectedImage],
-                width: 1200,
-                height: 1200
-              }}
-              enlargedImagePosition="over"
-              enlargedImageContainerDimensions={{
-                width: '150%',
-                height: '150%'
-              }}
-              enlargedImageContainerStyle={{
-                zIndex: 20,
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                overflow: 'hidden'
-              }}
-              lensStyle={{
-                backgroundColor: 'rgba(0,0,0,0.1)',
-                cursor: 'zoom-in'
-              }}
-              isHintEnabled={true}
-              shouldUsePositiveSpaceLens={true}
-              hintTextMouse="Hover to zoom"
-              hintTextTouch="Tap to zoom"
-            />
+            {isMobile ? (
+              <img
+                src={product.images[selectedImage]}
+                alt={product.name}
+                className="main-image"
+              />
+            ) : (
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: product.name,
+                    isFluidWidth: true,
+                    src: product.images[selectedImage],
+                    sizes: '(max-width: 600px) 100vw, 50vw'
+                  },
+                  largeImage: {
+                    src: product.images[selectedImage],
+                    width: 1200,
+                    height: 1200
+                  },
+                  enlargedImageContainerDimensions: {
+                    width: '150%',
+                    height: '100%'
+                  },
+                  enlargedImageContainerStyle: {
+                    zIndex: 100,
+                    border: '1px solid var(--border)',
+                    borderRadius: '8px'
+                  },
+                  lensStyle: {
+                    backgroundColor: 'rgba(0,0,0,0.1)',
+                    cursor: 'zoom-in'
+                  },
+                  isHintEnabled: true,
+                  shouldUsePositiveSpaceLens: true,
+                  enlargedImagePosition: 'beside'
+                }}
+              />
+            )}
           </div>
         </div>
 
-        {/* Product Info */}
+        {/* Product Info - Keep your original structure */}
         <div className="product-info">
           <div className="product-header">
             <h1>{product.name}</h1>
@@ -173,7 +186,6 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Variant Selector */}
           <div className="variant-selector">
             <label>Color:</label>
             <div className="variant-options">
@@ -191,7 +203,6 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Quantity Selector */}
           <div className="quantity-selector">
             <label>Quantity:</label>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
@@ -211,7 +222,6 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Features */}
           <div className="product-features">
             <h3>Features:</h3>
             <ul>
@@ -221,13 +231,11 @@ const ProductDetails = () => {
             </ul>
           </div>
 
-          {/* Action Buttons */}
           <div className="action-buttons">
             <button className="primary-button">Add to Cart</button>
             <button className="secondary-button">Buy Now</button>
           </div>
 
-          {/* Product Meta */}
           <div className="product-meta">
             <div className="meta-item">
               <span>✅</span>
@@ -244,7 +252,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Reviews Section */}
+        {/* Reviews Section - Keep your original structure */}
         <div className="reviews-section">
           <h2>Customer Reviews</h2>
 
@@ -298,7 +306,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Similar Products */}
+        {/* Similar Products - Keep your original structure */}
         <div className="similar-products">
           <h2>Similar Products</h2>
           <div className="similar-products-grid">

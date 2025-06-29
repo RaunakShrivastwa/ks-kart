@@ -13,17 +13,17 @@ function NavBarUI() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className=' fs-16' href="#home"><span>Gifts</span></Nav.Link>
-            <Nav.Link href="#link"><span>Photo Frame</span></Nav.Link>
-            <Nav.Link href="#link"><span>Mobile Covers</span></Nav.Link>
-            <Nav.Link href="#link"><span>Electronics</span></Nav.Link>
-            <Nav.Link href="#link"><span>BirthDay</span></Nav.Link>
-            <Nav.Link href="#link"><span>Bookie</span></Nav.Link>
-            <Nav.Link href="#link"><span>BirthDay</span></Nav.Link>
-            <Nav.Link href="#link"><span>Catogery</span></Nav.Link>
-            <Nav.Link href="#link"><span>Catogery</span></Nav.Link>
+            <Nav.Link className=' fs-16' href="#home"><span className='white'>Gifts</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Photo Frame</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Mobile Covers</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Electronics</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>BirthDay</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Bookie</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>BirthDay</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Catogery</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>Catogery</span></Nav.Link>
+            <Nav.Link href="#link"><span className='white'>More</span></Nav.Link>
             
-            <Nav.Link className='text-light fs-16' href="#link">More+</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

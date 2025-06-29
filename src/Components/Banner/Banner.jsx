@@ -45,7 +45,7 @@ const Banner = () => {
                 <div className="banner_content d-flex flex-column justify-content-center align-items-center">
                   <h1 className='white'>{item.title}</h1>
                   <p className='text-center w-100 white' >{item.desc}</p>
-                  <Link to={item.url} className="course_btn button"><span>Explore Product</span></Link>
+                  <Link to={item.url} className="course_btn button "><span className='white'>Explore Product</span></Link>
                 </div>
               </div>
             </div>
