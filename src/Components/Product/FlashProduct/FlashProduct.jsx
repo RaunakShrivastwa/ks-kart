@@ -37,10 +37,10 @@ const FlashDeals = ({ icon, title1, title2, desc, flashDeals }) => {
         {flashDeals.map((deal, idx) => (
           <div className="flash-card" key={idx}>
             <div className="card-header">
-              {deal?.discount && <span className="discount bg_primary-100 text-light fs-14">{deal.discount} OFF</span>}
-              {deal?.tag && <div className='icon_con timer bg_primary text-light d-flex align-items-center'>
-                 <span className='t_icon d-flex'>{icon}</span>
-                 <span>{deal?.tag}</span>
+              {deal?.discount && <span className="discount bg_primary-100 text-light fs-14 white">{deal.discount} OFF</span>}
+              {deal?.tag && <div className='icon_con timer bg_primary text-light d-flex align-items-center white'>
+                 <span className='t_icon d-flex white'>{icon}</span>
+                 <span className='white'>{deal?.tag}</span>
 
               </div> }
               {deal?.time && <span className="timer">⏱ {deal.time}</span>}

@@ -24,7 +24,7 @@ const Footer = () => {
               width={"40px"}
               className="mb-3 logo-pulse"
             />
-            <p>
+            <p className="white">
               We are a team of passionate developers specializing in creating
               cutting-edge websites and robust API services. Our mission is to
               empower businesses with innovative digital solutions.

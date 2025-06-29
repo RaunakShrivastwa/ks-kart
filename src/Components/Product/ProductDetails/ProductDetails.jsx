@@ -146,12 +146,12 @@ const ProductDetails = () => {
                   },
                   largeImage: {
                     src: product.images[selectedImage],
-                    width: 1200,
-                    height: 1200
+                    width: 1000,
+                    height: 1000
                   },
                   enlargedImageContainerDimensions: {
-                    width: '150%',
-                    height: '100%'
+                    width: '400',
+                    height: '400'
                   },
                   enlargedImageContainerStyle: {
                     zIndex: 100,
@@ -305,27 +305,19 @@ const ProductDetails = () => {
             ))}
           </div>
         </div>
-
-        {/* Similar Products - Keep your original structure */}
-        <div className="similar-products">
-          <h2>Similar Products</h2>
-          <div className="similar-products-grid">
-            {similarProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="product-card-image"
-                />
-                <div className="product-card-body">
-                  <h3 className="product-card-title">{product.name}</h3>
-                  <div className="product-card-price">${product.price.toFixed(2)}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+       
       </div>
+
+      {/* Similar Products - Keep your original structure */}
+        <div className='w-100'>
+             <FlashDeals 
+          icon={<GrAnalytics />} 
+          title1={'Similar Products'} 
+          title2={'Hurry!'} 
+          desc={'Best Suggestion on Your Search, Analytic and all'} 
+          flashDeals={flashDeals} 
+        />
+        </div>
 
       <div className='w-100'>
         <FlashDeals 

@@ -1,5 +1,5 @@
-import React, { use } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { use, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import "./style.scss";
@@ -10,12 +10,14 @@ import CryptoService from "./EncryptionDecryption/CryptoService";
 import ProductDetails from "./Components/Product/ProductDetails/ProductDetails";
 
 
+
 const App = () => {
   const selector = useSelector((state) => state.theme.mode);
   const theme = localStorage.getItem('theme') ? CryptoService.decrypt(localStorage.getItem('theme')) :   selector || 'light';
   return (
     <div className={`${theme}`}>
       <Router >
+        <ScrollToTop />
       <Header />
       <main>
         <Routes>
@@ -28,5 +30,14 @@ const App = () => {
     </div>
   );
 };
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default App;
