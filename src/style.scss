@@ -64,6 +64,7 @@ p{
     margin: 0 !important;
    padding: 0 !important;
      color: var(--text-primary);
+     
 }
 
 span{
@@ -144,5 +145,5 @@ main {
 }
 
 .white{
-  color: var(--white);
+  color: var(--white) !important;
 }

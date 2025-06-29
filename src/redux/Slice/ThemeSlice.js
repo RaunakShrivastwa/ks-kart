@@ -11,7 +11,6 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme(state, action) {
       state.mode = action.payload;
-      console.log(`Theme changed to: ${state.mode}`);
       const encrypted = CryptoService.encrypt(state.mode);
       localStorage.setItem('theme', encrypted);
     },
